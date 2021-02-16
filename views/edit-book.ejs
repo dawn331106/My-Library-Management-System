@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html style="background-color: cyan;">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.user-detail {
+ height: 90vh;
+ border: 2px solid #f1f1f1; 
+ padding: 16px; 
+ background-color: white; 
+ width: 30%;
+} 
+input{ 
+ width: 90%; 
+ padding: 15px;
+ margin: 5px 0 22px 0; 
+ display: inline-block; 
+ border: none; 
+ background: #f1f1f1;
+} 
+input[type=text]:focus, input[type=year]:focus,input[type=number]:focus { 
+ background-color: #ddd;
+ outline: none;
+} 
+button[type=submit] { 
+ background-color: #434140; 
+ color: #ffffff; 
+ padding: 10px 20px; 
+ margin: 8px 0; 
+ border: none; 
+ cursor: pointer; 
+ width: 100%; 
+ opacity: 0.9; 
+ font-size: 20px;
+} 
+label{ 
+ font-size: 18px;
+} 
+button[type=submit]:hover { 
+ background-color:#3d3c3c;
+} 
+</style>
+</head>
+<body>
+<!--====form section start====-->
+<div class="user-detail" style="margin-left: auto;margin-right: auto;">
+    <h2>Edit book data</h2>
+    <%if(userData.length!=0){
+      var i=1;
+      userData.forEach(function(data){
+        %>
+    <form action="/books/update/<%=data.BooksID%>" method="POSt">
+          <label>Book Name</label>
+          <input type="text" value="<%= data.Name %>" name="Name" required>
+          <label>Author</label>
+          <input type="text" value="<%= data.Author %>" name="Author" required>
+          <label>Published year</label>
+          <input type="year" value="<%= data.Published %>" name="Published" required>
+          <label>Pages</label>
+          <input type="number" value="<%= data.Pages %>" name="Pages" required>
+          <label>Quantity</label>
+          <input type="number" value="<%= data.Quantity %>" name="Quantity" required>
+          <% i++; })} %>
+          <button type="submit">Submit</button>
+        </div>
+</div>
+<p style="text-align: center;font-size: 25px;">Return to Home page <a href="/">Home</a></p>
+<!--====form section start====-->
+</body>
+</html>

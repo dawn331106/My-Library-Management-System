@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: aqua;">
+<head>
+  <title>Booklist</title>
+</head>
+<body>
+    <div class="table-data">
+<h2 style="text-align: center;font-size: 40px;">Books and their description</h2>
+    <table border="2" style="width: 1200px; border: 2px solid black;text-align: center;margin-left: auto;margin-right: auto;">
+        <tr style="font-size: 30px;">
+            <th>BooksID</th>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Published</th>
+            <th>Pages</th>
+            <th>Quantity</th>
+        </tr>
+        
+        <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr style="font-size: 25px;">
+            <td><%=data.BooksID; %></td>
+            <td><%=data.Name %></td>
+            <td><%=data.Author %></td>
+            <td><%=data.Published %></td>
+            <td><%=data.Pages %></td>
+            <td><%=data.Quantity %></td>
+            <td><a href="/books/edit/<%=data.BooksID%>">Edit</a></td>
+            <td><a href="/books/delete/<%=data.BooksID%>">Delete</a></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="5">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+    <p style="text-align: center;font-size: 25px;">Return to Home page <a href="/">Home</a></p>
+</body>
+</html>

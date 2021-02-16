@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html style="background-color: cyan;">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.book-detail {
+ height: 35vh;
+ border: 2px solid #f1f1f1; 
+ padding: 16px; 
+ background-color: white; 
+ width: 30%;
+} 
+input{ 
+ width: 90%; 
+ padding: 15px;
+ margin: 5px 0 22px 0; 
+ display: inline-block; 
+ border: none; 
+ background: #f1f1f1;
+} 
+input[type=text]:focus, input[type=year]:focus,input[type=number]:focus { 
+ background-color: #ddd;
+ outline: none;
+} 
+button[type=submit] { 
+ background-color: #434140; 
+ color: #ffffff; 
+ padding: 10px 20px; 
+ margin: 8px 0; 
+ border: none; 
+ cursor: pointer; 
+ width: 100%; 
+ opacity: 0.9; 
+ font-size: 20px;
+} 
+label{ 
+ font-size: 18px;
+} 
+button[type=submit]:hover { 
+ background-color:#3d3c3c;
+} 
+</style>
+</head>
+<body>
+<!--====form section start====-->
+<div class="book-detail" style="margin-left: auto;margin-right: auto;">
+    <h2>Search a book</h2>
+    <form action="/books/show" method="POST">
+          <label>Book Name</label>
+          <input type="text" placeholder="Enter Book's Name" name="Name" required>
+          <button type="submit">Search</button>
+          </div>
+</div>
+<p style="text-align: center;font-size: 25px;">Return to Home page <a href="/">Home</a></p>
+<!--====form section start====-->
+</body>
+</html>
