@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Online Library Management System
+	</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+		<div class="headbar">
+			<ul>
+				<li><a href="/">Logout</a></li>
+			</ul>
+		</div>
+		<div class="logo">
+			<img src="../public/images/logo.png">
+			<h1 style="color: black;">LIBRARY MANAGEMENT</h1>
+		</div>
+			<nav>
+				<ul>
+					<li><a href="/books/home">HOME</a></li>
+					<li><a href="/books/book-list">BOOKS</a></li>
+					<li><a href="/books/form">INSERT</a></li>
+					<li>
+						<div class="dropdown1">
+							<a href="">SEARCH<i class="fa fa-caret-down"></i>
+							</a>
+							<div class="dropdown-content1">
+							  <a href="/books/search-by-name">By Name</a>
+							  <a href="/books/search-by-author">By Author</a>
+							  <a href="/books/search-by-isbn">By ISBN</a>
+							</div>
+						  </div> 
+					</li>
+					<li><a href="/books/bookissue">ISSUE</a></li>
+                    <li><a style="text-decoration:none;border-bottom: 2px solid blue;" href="/books/issue-list">ISSUE-LIST</a></li>
+                    <li><a href="/books/returnbook">RETURN</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+            <div class="table-data">
+                <h2>Issue List</h2>
+                <br><br>
+                    <table>
+                        <tr style="font-size: 30px;">
+                            <th>Name</th>
+                            <th>Registration Number</th>
+                            <th>ISBN</th>
+                            <th>Issue Date</th>
+                            <th>Deadline</th>
+                        </tr>
+                        
+                        <%
+                        if(userData.length!=0){
+                        var i=1;
+                        userData.forEach(function(data){
+                        %>
+                        <tr style="font-size: 25px; height: 35px;">
+                            <td><%=data.Name %></td>
+                            <td><%=data.Reg_no %></td>
+                            <td><%=data.ISBN %></td>
+                            <td><%=data.Issue_date %></td>
+                            <td><%=data.Deadline %></td>
+                        </tr>
+                        <%  i++; }) %>
+                        <% } else{ %>
+                            <tr>
+                                <td colspan="5">No Data Found</td>
+                            </tr>
+                        <% } %>
+                    </table>
+            </div>
+		</section>
+	</div>
+</body>
+<div class="footer-clean">
+	<footer>
+		<div class="foot-container">
+			<div class="row justify-content-center">
+				<div class="col-sm-4 col-md-3 item">
+					<h3>Open Library</h3>
+					<ul>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Terms of Service</a></li>
+						<li><a href="#">Donate</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-4 col-md-3 item">
+					<h3>Discover</h3>
+					<ul>
+						<li>
+							<div class="dropdown1">
+								<a href="">Search
+								  <i class="fa fa-caret-down"></i>
+								</a>
+								<div class="dropdown-content1">
+								  <a href="/books/search-by-name">By Name</a>
+								  <a href="/books/search-by-author">By Author</a>
+								  <a href="/books/search-by-isbn">By ISBN</a>
+								</div>
+							  </div> 
+						</li>
+					    <li><a href="/">Home</a></li>
+					    <li><a href="/books/book-list">Books</a></li>
+						<li><a href="/books/bookissue">Issue</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-4 col-md-3 item">
+					<h3>About</h3>
+					<ul>
+						<li><a href="#">Company</a></li>
+						<li><a href="#">Team</a></li>
+						<li><a href="#">Legacy</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-4 col-md-3 item">
+					<h3>Help</h3>
+					<ul>
+						<li><a href="#">Report A problem</a></li>
+						<li><a href="#">Help Center</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+					<p class="copyright">Company Name © 2018</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</html>
+
+
+
+
