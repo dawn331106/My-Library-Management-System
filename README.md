@@ -14,6 +14,18 @@ A library management system is the most proficient and easy to use system for ma
 - View and Search Books
 - Issue and Return Books
 
+## Front-end
+- HTML,CSS and Bootstrap.
+
+## Back-end
+- Nodejs and MySQL.
+
+## Getting Started
+- Clone this repository.
+- Install Nodejs,Express and MySQL driver.
+- Type npm start in terminal and press Enter.
+- Open any browser, type the URL https://localhost:3000 (3000 is the port the server is listening to)
+
 ## Screenshots
 
 ![](Screenshots/Initialpage.PNG)
