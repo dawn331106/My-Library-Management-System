@@ -22,8 +22,8 @@ A library management system is the most proficient and easy to use system for ma
 
 ## Getting Started
 - Clone this repository.
-- Install Nodejs,Express and MySQL driver.
-- Type npm start in terminal and press Enter.
+- Install Nodejs,Express(npm install express) and MySQL driver(npm install mysql)
+- Type (npm start) in terminal and press Enter.
 - Open any browser, type the URL https://localhost:3000 (3000 is the port the server is listening to)
 
 ## Screenshots
@@ -43,3 +43,6 @@ A library management system is the most proficient and easy to use system for ma
 ![](Screenshots/userhome.PNG)
 
 ![](Screenshots/userprofile.PNG)
+
+
+## [Presentation Video Link](https://drive.google.com/file/d/1HPZeB2-k_MysmoCs6YbSh2d6iunC69ic/view?usp=sharing)
